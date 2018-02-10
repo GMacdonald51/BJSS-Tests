@@ -1,0 +1,154 @@
+{
+	"info": {
+		"name": "Create Test User",
+		"_postman_id": "5452f690-c338-4fb0-6b06-c7accf23bc41",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " Create a test user which is an individual",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Response time is less than 1200ms\"] = responseTime < 1200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.hmrc.1.0+json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1ae67086a7d4d01cc6159449be34c5d1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"serviceNames\": [\n    \"national-insurance\",\n    \"self-assessment\",\n    \"mtd-income-tax\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{create-test-user-url}}/individuals",
+					"host": [
+						"{{create-test-user-url}}"
+					],
+					"path": [
+						"individuals"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": " Create a test user which is an organisation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Response time is less than 1200ms\"] = responseTime < 1200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.hmrc.1.0+json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"serviceNames\": [\n    \"national-insurance\",\n    \"self-assessment\",\n    \"mtd-income-tax\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{create-test-user-url}}/organisations",
+					"host": [
+						"{{create-test-user-url}}"
+					],
+					"path": [
+						"organisations"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": " Create a test user which is an agent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Response time is less than 1200ms\"] = responseTime < 1200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.hmrc.1.0+json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"serviceNames\": [\n    \"national-insurance\",\n    \"self-assessment\",\n    \"mtd-income-tax\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{create-test-user-url}}/agents",
+					"host": [
+						"{{create-test-user-url}}"
+					],
+					"path": [
+						"agents"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
